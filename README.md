@@ -1,0 +1,2 @@
+# Orel-IT-Assignment
+ Orel IT TECHNICAL ASSESSMENT
