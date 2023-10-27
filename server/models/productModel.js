@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const postSchema = mongoose.Schema(
+const productsSchema = mongoose.Schema(
   {
     userId: {
       type: String,
@@ -15,14 +15,14 @@ const postSchema = mongoose.Schema(
     description: {
       type: String,
     },
-    likes: {
-      type: Map,
-      of: Boolean,
+    price: {
+      type: String,
+      required: true,
     }
   },
   { timestamps: true }
 );
 
-const Posts = mongoose.model("Posts", postSchema);
+const Products = mongoose.model("Products", productsSchema);
 
-export default Posts;
+export default Products;

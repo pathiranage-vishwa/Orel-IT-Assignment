@@ -33,7 +33,7 @@ function Login() {
     const handleSubmit = async e => {
         e.preventDefault()
         try {
-            const res = await axios.post('/user/login', {email, password})
+            const res = await axios.post('/auth/login', {email, password})
             
             setUser({...user, err: '', success: res.data.msg})
 
@@ -53,7 +53,7 @@ function Login() {
       console.log(response)
       try {
                   
-          const res = await axios.post('/user/google_login', {tokenId: response.tokenId})
+          const res = await axios.post('/auth/google_login', {tokenId: response.tokenId})
          
           setUser({...user, err:'', success: res.data.msg})
           localStorage.setItem('firstLogin', true)

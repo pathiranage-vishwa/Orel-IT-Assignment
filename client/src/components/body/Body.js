@@ -21,7 +21,7 @@ function Body() {
             <Route path="/" exact component={Home}/>
             <Route path="/login" exact component={ isLogged ? NotFound : Login}/>
             <Route path="/register" exact component={ isLogged ? NotFound : Register}/>
-            <Route path="/user/activate/:activation_token" exact component={ActivationEmail}/>
+            <Route path="/auth/activate/:activation_token" exact component={ActivationEmail}/>
             <Route path="/profile" exact component={ isLogged ? Profile :NotFound}/>
          </Switch>
     

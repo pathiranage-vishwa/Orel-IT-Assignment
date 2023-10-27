@@ -66,7 +66,7 @@ export default function Profile() {
 
     const updateInfor = () => {
         try {
-            axios.patch('/user/update', {
+            axios.patch('/auth/update', {
                 name: name ? name : user.name,
                 about: about ? about : user.about,
                 avatar: avatar ? avatar : user.avatar
@@ -90,7 +90,7 @@ export default function Profile() {
             return setData({...data, err: "Password did not match.", success: ''})
 
         try {
-            axios.post('/user/reset', {password},{
+            axios.post('/auth/reset', {password},{
                 headers: {Authorization: token}
             })
 
@@ -183,7 +183,7 @@ export default function Profile() {
                 <div>
                     <em style={{color: "crimson"}}> 
                     * If you update your password here, you will not be able 
-                        to login quickly using google and facebook.
+                        to login quickly using google.
                     </em>
                 </div>
                 <br/>

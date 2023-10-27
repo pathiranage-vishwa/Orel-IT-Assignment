@@ -23,11 +23,6 @@ const userSchema = new Schema(
       default:
         "https://res.cloudinary.com/dl99x/image/upload/v1646240499/images_hiwgpp.png",
     },
-
-    mobile: {
-      type: String,
-      default: "",
-    },
   },
   {
     timestamps: true,

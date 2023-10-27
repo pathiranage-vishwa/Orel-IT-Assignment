@@ -32,6 +32,10 @@ app.use(bodyParser.json());
 import userRouter from "./routes/userRoute.js";
 app.use("/auth", userRouter);
 
+//Product Routes
+import productRouter from "./routes/productRoutes.js";
+app.use("/recommended", productRouter);
+
 //server run in this port 8070
 const PORT = process.env.PORT || 8070;
 

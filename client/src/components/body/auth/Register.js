@@ -79,22 +79,6 @@ const responseGoogle = async (response) => {
   }
 }
 
-const responseFacebook = async (response) => {
-  try {
-      const {accessToken, userID} = response
-      const res = await axios.post('/user/facebook_signup', {accessToken, userID})
-
-      setUser({...user, err:'', success: res.data.msg})
-      localStorage.setItem('firstLogin', true)
-
-      dispatch(dispatchLogin())
-      history.push('/')
-  } catch (err) {
-      err.response.data.msg && 
-      setUser({...user, err: err.response.data.msg, success: ''})
-  }
-}
-
   return (
     <div>
  <div className="register">

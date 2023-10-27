@@ -12,7 +12,7 @@ const client = new OAuth2(process.env.MAILING_SERVICE_CLIENT_ID)
 const userCtrl = {
 
     register: async (req, res) => {
-        const { name, email, password, mobile
+        const { name, email, password
 
         } = req.body
         try {
@@ -35,7 +35,7 @@ const userCtrl = {
             const passwordHash = await bcrypt.hash(password, saltpwd);
 
             const newUser = new Users({
-                name, email, password: passwordHash, mobile
+                name, email, password: passwordHash
             })
 
             await newUser.save();
@@ -131,8 +131,8 @@ const userCtrl = {
     },
 
     updateUser: async (req, res) => {
-        const { name, email, avatar, mobile} = req.body
-        const update = { name, email, avatar, mobile}
+        const { name, email, avatar} = req.body
+        const update = { name, email, avatar}
         try {
             await Users.findByIdAndUpdate(req.user.id, update)
             res.json({ msg: "Update Success!" })
