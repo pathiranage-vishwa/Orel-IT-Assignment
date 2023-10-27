@@ -12,7 +12,7 @@ export default function Header() {
 
     const handleLogout = async () => {
       try {
-          await axios.get('/user/logout')
+          await axios.get('/auth/logout')
           localStorage.removeItem('firstLogin')
           window.location.href = "/";
       } catch (err) {
